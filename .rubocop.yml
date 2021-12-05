@@ -1,0 +1,19 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+  - rubocop-performance
+
+inherit_gem:
+  rubocop-fjord:
+    - "config/rubocop.yml"
+    - "config/rails.yml"
+
+AllCops:
+  Exclude:
+    - public/**/*
+    - tmp/**/*
+    - log/**/*
+    - bin/**/*
+    - config/**/*
+    - config/**/*
+    - config.ru
