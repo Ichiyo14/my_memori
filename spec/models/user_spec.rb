@@ -18,14 +18,8 @@ RSpec.describe User, type: :model do
   end
 
   it 'is invalid with a duplicate email address' do
-    described_class.create(
-      email: 'abc@example.com',
-      password: 'testtest'
-    )
-    user = described_class.new(
-      email: 'abc@example.com',
-      password: 'testtest'
-    )
+    described_class.create(email: 'abc@example.com', password: 'testtest')
+    user = described_class.new(email: 'abc@example.com', password: 'testtest')
     user.valid?
     expect(user.errors[:email]).to include('はすでに存在します')
   end
