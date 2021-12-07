@@ -30,6 +30,8 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 # 追加のgem
+gem 'devise'
+gem 'devise-i18n'
 gem 'rails-i18n', '~> 6.0.0'
 gem 'slim-rails'
 
@@ -48,7 +50,8 @@ group :development do
   gem 'rack-mini-profiler', '~> 2.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  # rubocop関連
+
+  gem 'html2slim'
   gem 'rubocop', '~> 1.23', require: false
   gem 'rubocop-fjord', require: false
   gem 'rubocop-performance', require: false

@@ -17,3 +17,5 @@ AllCops:
     - config/**/*
     - config/**/*
     - config.ru
+    - db/migrate/*
+    - db/schema.rb
