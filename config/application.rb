@@ -31,10 +31,7 @@ module MyMemori
     #
     config.time_zone = "Tokyo"
     # config.eager_load_paths << Rails.root.join("extras")
-
-    # Don't generate system test files.
     config.generators do |g|
-      g.system_tests = nil
       g.test_framework :rspec,
         fixtures: false,
         view_specs: false,
