@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_09_074924) do
+ActiveRecord::Schema.define(version: 2021_12_09_075354) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,13 @@ ActiveRecord::Schema.define(version: 2021_12_09_074924) do
     t.index ["questionnaire_id"], name: "index_questions_on_questionnaire_id"
   end
 
+  create_table "scales", force: :cascade do |t|
+    t.bigint "question_id", null: false
+    t.integer "scale", null: false
+    t.text "representation"
+    t.index ["question_id"], name: "index_scales_on_question_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -61,4 +68,5 @@ ActiveRecord::Schema.define(version: 2021_12_09_074924) do
   add_foreign_key "questionnaires", "users"
   add_foreign_key "questions", "factors"
   add_foreign_key "questions", "questionnaires"
+  add_foreign_key "scales", "questions"
 end
