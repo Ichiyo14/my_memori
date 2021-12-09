@@ -19,3 +19,8 @@ AllCops:
     - config.ru
     - db/migrate/*
     - db/schema.rb
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*
+
