@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_09_075354) do
+ActiveRecord::Schema.define(version: 2021_12_09_075802) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answers", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "question_id", null: false
+    t.bigint "scale_id", null: false
+    t.integer "time", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["question_id"], name: "index_answers_on_question_id"
+    t.index ["scale_id"], name: "index_answers_on_scale_id"
+    t.index ["user_id"], name: "index_answers_on_user_id"
+  end
 
   create_table "factors", force: :cascade do |t|
     t.float "average_score"
@@ -64,6 +76,9 @@ ActiveRecord::Schema.define(version: 2021_12_09_075354) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "answers", "questions"
+  add_foreign_key "answers", "scales"
+  add_foreign_key "answers", "users"
   add_foreign_key "factors", "questionnaires"
   add_foreign_key "questionnaires", "users"
   add_foreign_key "questions", "factors"
