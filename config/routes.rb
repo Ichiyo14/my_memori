@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :questionnaires
   root to: 'home#index'
   get "test", to: "home#test", as: "test"
 

@@ -1,0 +1,33 @@
+p#notice = notice
+
+p
+  strong Description:
+  = @questionnaire.description
+
+p
+  strong User:
+  = @questionnaire.user
+
+p
+  strong Reference url:
+  = @questionnaire.reference_url
+
+p
+  strong Tittle:
+  = @questionnaire.tittle
+
+p
+  strong Memo:
+  = @questionnaire.memo
+
+p
+  strong Reference memo:
+  = @questionnaire.reference_memo
+
+p
+  strong Average score:
+  = @questionnaire.average_score
+
+=> link_to 'Edit', edit_questionnaire_path(@questionnaire)
+'|
+=< link_to 'Back', questionnaires_path
