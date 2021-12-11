@@ -1,3 +1,9 @@
-ansswerable_questionnaire1:
+<%  1.upto(5) do |i| %>
+ansswerable_questionnaire<%= i%>:
   user: test_kun
-  questionnaire: questionnaire1
+  questionnaire: questionnaire<%= i%>
+<% end %>
+
+ansswerable_questionnaire6:
+  user: test_chan
+  questionnaire: test_chanのquestionnaire
