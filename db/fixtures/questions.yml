@@ -1,0 +1,7 @@
+<% 1.upto(10) do |i| %>
+question<%= i %>:
+  questionnaire: questionnaire1
+  factor: factor<%= i/2 %>
+  content: <%= i %>目の質問
+  order: <%= i %>
+<% end %>

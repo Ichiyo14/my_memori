@@ -1,0 +1,7 @@
+<% 1.upto(10) do |i| %>
+answer<%= i %>:
+  user: test_kun
+  question: question<%= i%>
+  scale: scale<%= i %>
+  time: 1
+<% end %>
