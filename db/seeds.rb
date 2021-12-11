@@ -1,14 +1,7 @@
 # frozen_string_literal: true
 
-User.create!(
-  [
-    {
-      email: 't1@sample.com',
-      password: 'testtest'
-    },
-    {
-      email: 't2@sample.com',
-      password: 'testtest'
-    }
-  ]
-)
+require 'active_record/fixtures'
+
+ActiveRecord::FixtureSet.create_fixtures 'db/fixtures', %i[
+  users
+]
