@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :questionnaires
+
+  get 'users/:id/question', to: 'questionnaires#index', as: 'question'
+  resources :questionnaires, only: [:show, :update, :destroy]
   root to: 'home#index'
   get "test", to: "home#test", as: "test"
 
