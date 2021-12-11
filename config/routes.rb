@@ -1,9 +1,17 @@
 Rails.application.routes.draw do
 
-  get 'users/:id/questions', to: 'questionnaires#index', as: 'questions'
-  resources :questionnaires, only: [:show, :update, :destroy, :edit, :new]
   root to: 'home#index'
   get "test", to: "home#test", as: "test"
+
+  get 'users/:id/questions', to: 'questionnaires#index', as: 'questions'
+  get 'users/:id/questions/:id', to: 'questionnaires#show' ,as: :show_question
+  get 'questions/new', to: 'questionnaires#new'
+  post 'questions', to: 'questionnaires#create' ,as: :create_question
+  get 'questions/:id/edit', to: 'questionnaires#:id#edit'
+  get 'questions/:id/answer', to: 'answers#new', as: :new_answer
+
+  resources :questionnaires, only: [:show, :update, :destroy, :edit, :new]
+
 
   devise_scope :user do
     get 'sign_in' => 'devise/sessions#new', as: :new_user_session

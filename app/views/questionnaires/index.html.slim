@@ -1,3 +1,5 @@
+= link_to 'ログアウト', destroy_user_session_path, method: :delete
+
 h1 質問一覧
 
 table
@@ -12,8 +14,8 @@ table
       - if questionnaire.answerable_questionnaires.where(user_id: current_user.id).exists?
           tr
             td = questionnaire.tittle
-            td = link_to '回答する', questionnaire
-            td = link_to '詳細', edit_questionnaire_path(questionnaire)
+            td = link_to '回答する', new_answer_path(questionnaire)
+            td = link_to '詳細', show_question_path(questionnaire)
 br
 
-= link_to '新たな質問を作る', new_questionnaire_path
+= link_to '新たな質問を作る', questions_new_path
