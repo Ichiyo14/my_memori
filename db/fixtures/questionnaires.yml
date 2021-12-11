@@ -1,0 +1,8 @@
+questionnaire1:
+  description: "テスト用の質問紙の教示文です"
+  user: test_kun
+  reference_url: "reference@sample.com"
+  tittle: "テストタイトル"
+  memo: "テストメモ"
+  reference_memo: "リファレンステストメモ"
+  average_score: 13.3

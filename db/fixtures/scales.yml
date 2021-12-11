@@ -1,0 +1,27 @@
+<%  1.upto(10) do |i| %>
+scale<%= i %>:
+  question: question<%= i%>
+  scale: 1
+  representation: 当てはまらない
+
+scale<%= i + 11%>:
+  question: question<%= i%>
+  scale: 2
+  representation: やや当てはまらない
+
+scale<%= i + 22%>:
+  question: question<%= i%>
+  scale: 3
+  representation: どちらともいえない
+
+scale<%= i + 33%>:
+  question: question<%= i%>
+  scale: 4
+  representation: やや当てはまる
+
+scale<%= i + 44%>:
+  question: question<%= i%>
+  scale: 5
+  representation: 当てはまる
+<% end%>
+

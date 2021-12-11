@@ -1,11 +1,7 @@
-test:
-  email: 't1@sample.com'
-  encrypted_password: '$2a$12$0/661S.Hjr081JsOjs2LsOABXNLEUXUd.7tXC3JcK4SgYY0r/ArYq' # testtest
-  created_at: '2021-12-11 05:28:15.420294'
-  updated_at: '2021-12-11 05:28:15.420294'
+test_kun:
+  email: t1@sample.com
+  encrypted_password: $2a$12$0/661S.Hjr081JsOjs2LsOABXNLEUXUd.7tXC3JcK4SgYY0r/ArYq # testtest
 
-test2:
-  email: 't2@sample.com'
-  encrypted_password: '$2a$12$0/661S.Hjr081JsOjs2LsOABXNLEUXUd.7tXC3JcK4SgYY0r/ArYq' # testtest
-  created_at: '2021-12-11 05:28:15.420294'
-  updated_at: '2021-12-11 05:28:15.420294'
+test_chan:
+  email: t2@sample.com
+  encrypted_password: $2a$12$0/661S.Hjr081JsOjs2LsOABXNLEUXUd.7tXC3JcK4SgYY0r/ArYq # testtest

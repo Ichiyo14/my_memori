@@ -1,0 +1,8 @@
+
+<% 1.upto(5) do |i| %>
+factor<%= i %>:
+  questionnaire: questionnaire1
+  name: factor<%= i %>
+  order: <%= i %>
+  average_score: 3.<%= i %>
+<% end %>
