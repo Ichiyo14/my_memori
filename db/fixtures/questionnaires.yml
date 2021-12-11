@@ -1,8 +1,19 @@
-questionnaire1:
-  description: "テスト用の質問紙の教示文です"
+<%  1.upto(5) do |i| %>
+questionnaire<%= i%>:
+  description: "テスト<%= i%>の質問紙の教示文です"
   user: test_kun
-  reference_url: "reference@sample.com"
-  tittle: "テストタイトル"
-  memo: "テストメモ"
-  reference_memo: "リファレンステストメモ"
-  average_score: 13.3
+  reference_url: "reference<%= i%>@sample.com"
+  tittle: "<%= i%>のタイトル"
+  memo: "<%= i%>のメモ"
+  reference_memo: "<%= i%>のリファレンスメモ"
+  average_score: 13.<%= i%>
+<%end%>
+
+test_chanのquestionnaire:
+  description: "test_chanの質問紙の教示文です"
+  user: test_chan
+  reference_url: "reference_chan@sample.com"
+  tittle: "test_chanのタイトル"
+  memo: " test_chanのメモ"
+  reference_memo: " test_chanのリファレンスメモ"
+  average_score: 2

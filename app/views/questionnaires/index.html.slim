@@ -1,33 +1,21 @@
-h1 Listing questionnaires
+= link_to 'ログアウト', destroy_user_session_path, method: :delete
+
+h1 質問一覧
 
 table
   thead
     tr
-      th Description
-      th User
-      th Reference url
-      th Tittle
-      th Memo
-      th Reference memo
-      th Average score
       th
       th
       th
 
   tbody
     - @questionnaires.each do |questionnaire|
-      tr
-        td = questionnaire.description
-        td = questionnaire.user
-        td = questionnaire.reference_url
-        td = questionnaire.tittle
-        td = questionnaire.memo
-        td = questionnaire.reference_memo
-        td = questionnaire.average_score
-        td = link_to 'Show', questionnaire
-        td = link_to 'Edit', edit_questionnaire_path(questionnaire)
-        td = link_to 'Destroy', questionnaire, data: { confirm: 'Are you sure?' }, method: :delete
-
+      - if @answerable_questionnaires_id&.include?(questionnaire.id)
+          tr
+            td = questionnaire.tittle
+            td = link_to '回答する', new_answer_path(questionnaire)
+            td = link_to '詳細', show_question_path(questionnaire)
 br
 
-= link_to 'New Questionnaire', new_questionnaire_path
+= link_to '新たな質問を作る', questions_new_path
