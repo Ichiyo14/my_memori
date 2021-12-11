@@ -11,7 +11,7 @@ table
 
   tbody
     - @questionnaires.each do |questionnaire|
-      - if questionnaire.answerable_questionnaires.where(user_id: current_user.id).exists?
+      - if @answerable_questionnaires_id&.include?(questionnaire.id)
           tr
             td = questionnaire.tittle
             td = link_to '回答する', new_answer_path(questionnaire)

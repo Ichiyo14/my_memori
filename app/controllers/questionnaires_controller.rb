@@ -6,6 +6,7 @@ class QuestionnairesController < ApplicationController
 
   def index
     @questionnaires = Questionnaire.all
+    @answerable_questionnaires_id = answerable_questionnaires_id
   end
 
   def show; end
@@ -58,5 +59,9 @@ class QuestionnairesController < ApplicationController
 
   def questionnaire_params
     params.require(:questionnaire).permit(:description, :user_id, :reference_url, :tittle, :memo, :reference_memo, :average_score)
+  end
+
+  def answerable_questionnaires_id
+    AnswerableQuestionnaire.where(user_id: current_user.id).map { |answerable_questionnaire| answerable_questionnaire&.questionnaire_id }
   end
 end
