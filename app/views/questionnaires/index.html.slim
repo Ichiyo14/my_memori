@@ -1,33 +1,20 @@
-h1 Listing questionnaires
+h1 質問一覧
 
 table
   thead
     tr
-      th Description
-      th User
-      th Reference url
       th Tittle
-      th Memo
-      th Reference memo
-      th Average score
       th
       th
       th
 
   tbody
     - @questionnaires.each do |questionnaire|
-      tr
-        td = questionnaire.description
-        td = questionnaire.user
-        td = questionnaire.reference_url
-        td = questionnaire.tittle
-        td = questionnaire.memo
-        td = questionnaire.reference_memo
-        td = questionnaire.average_score
-        td = link_to 'Show', questionnaire
-        td = link_to 'Edit', edit_questionnaire_path(questionnaire)
-        td = link_to 'Destroy', questionnaire, data: { confirm: 'Are you sure?' }, method: :delete
-
+      - if questionnaire.answerable_questionnaires.where(user_id: current_user.id).exists?
+          tr
+            td = questionnaire.tittle
+            td = link_to 'Show', questionnaire
+            td = link_to 'Edit', edit_questionnaire_path(questionnaire)
 br
 
 = link_to 'New Questionnaire', new_questionnaire_path
