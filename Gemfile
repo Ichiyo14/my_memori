@@ -15,6 +15,7 @@ gem 'webpacker', '~> 5.0'
 # 追加のgem
 gem 'devise'
 gem 'devise-i18n'
+gem 'i18n_generators'
 gem 'rails-i18n', '~> 6.0.0'
 gem 'slim-rails'
 
