@@ -1,9 +1,9 @@
-= form_for @questionnaire, url: create_question_path do |f|
-  - if @questionnaire.errors.any?
+= form_for @questionnaire_form, url: create_question_path do |f|
+  - if @questionnaire_form.errors.any?
     #error_explanation
-      h2 = "#{pluralize(@questionnaire.errors.count, 'error')} prohibited this questionnaire from being saved:"
+      h2 = "#{pluralize(@questionnaire_form.errors.count, 'error')} prohibited this questionnaire from being saved:"
       ul
-        - @questionnaire.errors.full_messages.each do |message|
+        - @questionnaire_form.errors.full_messages.each do |message|
           li = message
 
   .field
