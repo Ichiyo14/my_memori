@@ -12,3 +12,4 @@ ActiveStorage.start()
 
 
 require('../hello_vue.js')
+require('../form_factor.js')

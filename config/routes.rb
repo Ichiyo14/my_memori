@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'users/:id/questions', to: 'questionnaires#index', as: 'questions'
   get 'users/:id/questions/:id', to: 'questionnaires#show' ,as: :show_question
   get 'questions/new', to: 'questionnaire_forms#new'
-  post 'questions', to: 'questionnaires#create' ,as: :create_question
+  post 'questions', to: 'questionnaire_forms#create' ,as: :create_question
   get 'questions/:id/edit', to: 'questionnaires#:id#edit'
   get 'questions/:id/answer', to: 'answers#new', as: :new_answer
 

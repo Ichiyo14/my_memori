@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class QuestionnaireFormsController < ApplicationController
+  before_action :authenticate_user!
   def new
     @questionnaire_form = QuestionnaireForm.new
   end
@@ -18,4 +19,20 @@ class QuestionnaireFormsController < ApplicationController
       end
     end
   end
+
+  private
+
+  def set_params
+    params.require(:questionnaire_form).permit(
+      :description,
+      :user_id,
+      :reference_url,
+      :tittle,
+      :memo,
+      :reference_memo,
+      :average_score,
+      questions_attributes: [:factor_id, :order, :content],
+      factors_attributes: [:name,:order])
+    end
+
 end
