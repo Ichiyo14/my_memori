@@ -7,21 +7,33 @@
           li = message
 
   .field
-    = f.label :description
-    = f.text_area :description
+    p タイトルを入力してください*
+    = f.text_field :tittle, required: true
   .field
-    = f.label :reference_url
+    p 教示文を入力してください（任意）
+    p 教示文とは、回答の前に表示される説明文です。
+    = f.text_area :description
+  h2.title.is-3 因子について*
+  p 質問に因子が２つ以上あるときには追加ボタンを押して、入力してください
+  p 因子が無い場合には変更する必要はありません
+  h2.title.is-3 尺度について
+  h2.title.is-3 質問の登録
+  p 質問内容を入力してください
+  p 質問内容をすべてコピーアンドペーストもしくは入力してください。
+  .actions = f.submit
+  h2.title.is-3 この質問について（任意）
+  p 参考にしたサイト、書籍等を入力してください。
+  .field
+    = f.label '参考URL（任意）'
     = f.text_field :reference_url
   .field
-    = f.label :tittle
-    = f.text_field :tittle
-  .field
-    = f.label :memo
-    = f.text_area :memo
-  .field
-    = f.label :reference_memo
+    = f.label '参考文献（任意）'
     = f.text_area :reference_memo
+  h2.title.is-4 点数について
   .field
-    = f.label :average_score
-    = f.text_field :average_score
+    = f.label '参考点数'
+    = f.number_field :average_score
+  .field
+    p その他この質問に関するメモを記入してください。（任意）
+    = f.text_area :memo
   .actions = f.submit
