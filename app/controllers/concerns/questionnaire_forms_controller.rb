@@ -33,7 +33,7 @@ class QuestionnaireFormsController < ApplicationController
       :average_score,
       questions_attributes: [
         :factor_id, :order, :content,
-        scale_attributes:[:scale,:representation]
+        scales_attributes:[:scale,:representation,:question_id]
       ],
       factors_attributes: [:name,:order])
     end

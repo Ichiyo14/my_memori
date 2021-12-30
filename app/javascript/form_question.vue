@@ -46,9 +46,12 @@ ul
     p.column 逆転項目
     input.column(type='checkbox' v-bind:name="`questionnaire_form[questions_attributes][${index}][reverse]`")
     select.column(v-bind:name="`questionnaire_form[questions_attributes][${index}][factor_id]`")
-      option(v-for='(factor,index) in factors' :key='index' value=index) {{factors[index]}}
-    input(v-for='(scale,index) in scales' :key='scale' v-bind:value='`${scale}`' type='hidden' v-bind:name="`questionnaire_form[questions_attributes][${this.questions.indexOf(question)}][scales_attributes][${index}][scale]`")
+      option(v-for='(factor,index) in factors' :key='index' v-bind:value='`${index}`') {{factors[index]}}
+    input(v-for='(scale,index) in scales' :key='scale' v-bind:value='`${this.questions.indexOf(question)}`' type='hidden' v-bind:name="`questionnaire_form[questions_attributes][${this.questions.indexOf(question)}][scales_attributes][${index}][question_id]`")
+    input(v-for='(scale,index) in scales' :key='scale' v-bind:value='`${scales[index].scale}`' type='hidden' v-bind:name="`questionnaire_form[questions_attributes][${this.questions.indexOf(question)}][scales_attributes][${index}][scale]`")
     input(v-for='(scale,index) in scales' :key='scale' v-bind:value='`${scales[index].representation}`' type='hidden' v-bind:name="`questionnaire_form[questions_attributes][[${this.questions.indexOf(question)}][scales_attributes][${index}][representation]`")
+    input(type='hidden' v-bind:name='`questionnaire_form[questions_attributes][${index}][order]`' v-bind:value='`${index}`')
+    input(type='hidden' v-bind:name='`questionnaire_form[questions_attributes][${index}][content]`' v-bind:value='`${question}`')
 </template>
 
 <script>
