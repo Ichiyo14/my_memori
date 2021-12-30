@@ -31,7 +31,10 @@ class QuestionnaireFormsController < ApplicationController
       :memo,
       :reference_memo,
       :average_score,
-      questions_attributes: [:factor_id, :order, :content],
+      questions_attributes: [
+        :factor_id, :order, :content,
+        scale_attributes:[:scale,:representation]
+      ],
       factors_attributes: [:name,:order])
     end
 
