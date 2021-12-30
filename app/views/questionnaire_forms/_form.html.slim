@@ -1,0 +1,33 @@
+= form_for @questionnaire_form, url: create_question_path do |f|
+  - if @questionnaire_form.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@questionnaire_form.errors.count, 'error')} prohibited this questionnaire from being saved:"
+      ul
+        - @questionnaire_form.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    p タイトルを入力してください*
+    = f.text_field :tittle, required: true
+  .field
+    p 教示文を入力してください（任意）
+    p 教示文とは、回答の前に表示される説明文です。
+    = f.text_area :description
+  #js-form-question
+  .actions = f.submit
+  h2.title.is-3 この質問について（任意）
+  p 参考にしたサイト、書籍等を入力してください。
+  .field
+    = f.label '参考URL（任意）'
+    = f.text_field :reference_url
+  .field
+    = f.label '参考文献（任意）'
+    = f.text_area :reference_memo
+  h2.title.is-4 点数について
+  .field
+    = f.label '参考点数'
+    = f.number_field :average_score
+  .field
+    p その他この質問に関するメモを記入してください。（任意）
+    = f.text_area :memo
+  .actions = f.submit

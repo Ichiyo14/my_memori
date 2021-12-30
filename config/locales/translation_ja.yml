@@ -1,0 +1,63 @@
+ja:
+  activerecord:
+    models:
+      answer: 答え #g
+      answerable_questionnaire: 回答可能なアンケート #g
+      factor: 要素 #g
+      question: 質問 #g
+      questionnaire: アンケート #g
+      scale: 規模 #g
+      user: ユーザー #g
+
+    attributes:
+      answer:
+        question: :activerecord.models.question #g
+        scale: :activerecord.models.scale #g
+        time: 時間 #g
+        user: :activerecord.models.user #g
+
+      answerable_questionnaire:
+        questionnaire: :activerecord.models.questionnaire #g
+        user: :activerecord.models.user #g
+
+      factor:
+        average_score: 平均スコア #g
+        name: 名前 #g
+        order: 注文 #g
+        questionnaire: :activerecord.models.questionnaire #g
+        questions: 質問 #g
+
+      question:
+        answer: 答え #g
+        content: コンテンツ #g
+        factor: :activerecord.models.factor #g
+        order: 注文 #g
+        questionnaire: :activerecord.models.questionnaire #g
+        scales: はかり #g
+
+      questionnaire:
+        answerable_questionnaires: 回答可能なアンケート #g
+        average_score: 平均スコア #g
+        description: 説明 #g
+        factors: 要因 #g
+        memo: メモ #g
+        reference_memo: リファレンスメモ #g
+        reference_url: 参照URL #g
+        tittle: Tittle #g
+        user: :activerecord.models.user #g
+
+      scale:
+        answers: 回答 #g
+        question: :activerecord.models.question #g
+        representation: 表現 #g
+        scale: 規模 #g
+
+      user:
+        answerable_questionnaires: 回答可能なアンケート #g
+        answers: 回答 #g
+        email: Eメール #g
+        encrypted_password: 暗号化パスワード #g
+        questionnaires: アンケート #g
+        remember_created_at: ログイン記憶時刻 #g
+        reset_password_sent_at: パスワードリセット送信時刻 #g
+        reset_password_token: パスワードリセット用トークン #g
